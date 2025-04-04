@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    
+    <!-- Example profile.html snippet -->
+    <img src="{{ url_for('static', filename=user.photo) }}" alt="Profile Picture" class="profile-pic">
+
+
+    <h2>{{ user.name }}</h2>
+    <p>{{ user.description }}</p>
+    <a href="{{ url_for('main.change_password') }}" class="btn">Change Password</a>
+</div>
+{% endblock %}

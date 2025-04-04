@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Available Locums{% endblock %}
+
+{% block content %}
+<div class="locum-list-container">
+    <h2>Available Locums</h2>
+    
+    {% if locums %}
+        <div class="locum-list">
+            {% for locum in locums %}
+                <div class="locum-item">
+                    <h3>{{ locum.job_title }}</h3>
+                    <p><strong>Requirements:</strong> {{ locum.requirements }}</p>
+                    <p><strong>Job Description:</strong> {{ locum.job_description }}</p>
+                    <p><strong>Location:</strong> {{ locum.location }}</p>
+                    <p><strong>Hourly Rate:</strong> KES {{ locum.hourly_rate }}</p>
+                    <p><strong>Start Time:</strong> {{ locum.start_time.strftime('%Y-%m-%d %H:%M') }}</p>
+                    <p><strong>End Time:</strong> {{ locum.end_time.strftime('%Y-%m-%d %H:%M') }}</p>
+                    <form action="{{ url_for('main.book_locum', locum_id=locum.id) }}" method="POST">
+                        <button type="submit" class="btn">Book This Locum</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No available locums found.</p>
+    {% endif %}
+</div>
+{% endblock %}
