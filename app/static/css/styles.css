@@ -151,6 +151,7 @@ footer {
 
 .form-container .btn:hover {
     background: #0056b3;
+    color: white;
 }
 
 .locum-list-container {
@@ -196,7 +197,8 @@ footer {
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #5b58ff;
+    color: white;
 }
 
 .status-booked {
@@ -282,5 +284,68 @@ h2 {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .container {
+        min-height: 100vh;
+        display: block;
+        padding: 20px;
+    }
+
+    .form-card {
+        margin: 20px auto;
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .form-container {
+        width: 90%;
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .nav a {
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .locum-list-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .locum-item {
+        padding: 10px;
+    }
+
+    .btn,
+    .submit-btn,
+    .mark-settled-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .input-group input {
+        font-size: 14px;
+        padding: 10px;
     }
 }
