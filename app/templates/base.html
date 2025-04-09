@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
     <div class="container">
@@ -33,7 +41,7 @@
                         <a href="{{ url_for('main.manage_locum') }}">Manage Locums</a>
                         <a href="{{ url_for('main.profile') }}">Profile</a>
                         <a href="{{ url_for('main.about') }}">About</a>
-                        <a href="{{ url_for('main.login') }}" class="logout-btn">Logout</a>
+                        <!-- <a href="{{ url_for('main.login') }}" class="logout-btn">Logout</a> -->
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="{{ url_for('main.home') }}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
@@ -42,11 +50,16 @@
                 </div>
             </div>
         </nav>
+        
+          <a href="#" id="backToTop" class="button">&#8593;</a>
         <div class="col-6 offset-3">
             <div class=" form-card">
                 <div >
                     {% block content %}{% endblock %}
                 </div>
+                <!-- <button id="backToTop">
+                    &#8593;
+                </button> -->
             
 
                 <footer>
