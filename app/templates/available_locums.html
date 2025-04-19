@@ -2,22 +2,23 @@
 {% block title %}Available Locums{% endblock %}
 
 {% block content %}
-<div class="locum-list-container">
+<div class="locum-list-container text-start">
     <h2>Available Locums</h2>
     
     {% if locums %}
         <div class="locum-list">
             {% for locum in locums %}
-                <div class="locum-item">
+                <div class="locum-item text-start">
                     <h3>{{ locum.job_title }}</h3>
-                    <p><strong>Requirements:</strong> {{ locum.requirements }}</p>
-                    <p><strong>Job Description:</strong> {{ locum.job_description }}</p>
-                    <p><strong>Location:</strong> {{ locum.location }}</p>
-                    <p><strong>Hourly Rate:</strong> KES {{ locum.hourly_rate }}</p>
-                    <p><strong>Start Time:</strong> {{ locum.start_time.strftime('%Y-%m-%d %H:%M') }}</p>
-                    <p><strong>End Time:</strong> {{ locum.end_time.strftime('%Y-%m-%d %H:%M') }}</p>
+                    <p><strong><span class="bold-color">Requirements:</span></strong> {{ locum.requirements }}</p>
+                    <p><strong><span class="bold-color">Job Description:</span></strong> {{ locum.job_description }}</p>
+                    <p><strong><span class="bold-color"><i class="bi bi-geo-alt-fill"></i>Location:</span></strong> {{ locum.location }}</p>
+                    <p><strong><span class="bold-color"><i class="bi bi-currency-dollar"></i>Hourly Rate:</span></strong> KES {{ locum.hourly_rate }}</p>
+                    <p><strong><span class="bold-color">Start Time:</span></strong> {{ locum.start_time.strftime('%Y-%m-%d %H:%M') }}</p>
+                    <p><strong><span class="bold-color">End Time:</span></strong> {{ locum.end_time.strftime('%Y-%m-%d %H:%M') }}</p>
+                    <p><strong><span class="bold-color">Created By:</span> {{ locum.poster.name }}</strong></p>
                     <form action="{{ url_for('main.book_locum', locum_id=locum.id) }}" method="POST">
-                        <button type="submit" class="btn">Book This Locum</button>
+                        <button type="submit" class="btn btn-info">Book This Locum</button>
                     </form>
                 </div>
             {% endfor %}

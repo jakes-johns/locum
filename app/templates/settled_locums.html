@@ -12,11 +12,19 @@
                     <h3>{{ locum.job_title }}</h3>
                     <p><strong>Requirements:</strong> {{ locum.requirements }}</p>
                     <p><strong>Job Description:</strong> {{ locum.job_description }}</p>
-                    <p><strong>Location:</strong> {{ locum.location }}</p>
+                    <p><strong><i class="bi bi-geo-alt-fill"></i>Location:</strong> {{ locum.location }}</p>
                     <p><strong>Hourly Rate:</strong> KES {{ locum.hourly_rate }}</p>
                     <p><strong>Start Time:</strong> {{ locum.start_time.strftime('%Y-%m-%d %H:%M') }}</p>
                     <p><strong>End Time:</strong> {{ locum.end_time.strftime('%Y-%m-%d %H:%M') }}</p>
-                    <p><strong>Status:</strong> {{ locum.status.capitalize() }}</p>
+                    <p><strong>Status:</strong>
+                        {% if locum.status == 'booked' %}
+                            <span class="status-booked">{{ locum.status }}</span>
+                        {% elif locum.status == 'settled' %}
+                            <span class="status-settled">{{ locum.status.capitalize() }}</span>
+                        {% else %}
+                            <span class="status-other">{{ locum.status }}</span>
+                        {% endif %}
+                    </p>
                 </div>
             {% endfor %}
         </div>

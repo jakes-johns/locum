@@ -11,16 +11,16 @@
             {% for locum in locums %}
                 <div class="locum-item">
                     <h3>{{ locum.job_title }}</h3>
-                    <p><strong>Requirements:</strong> {{ locum.requirements }}</p>
-                    <p><strong>Job Description:</strong> {{ locum.job_description }}</p>
-                    <p><strong>Location:</strong> {{ locum.location }}</p>
-                    <p><strong>Hourly Rate:</strong> KES {{ locum.hourly_rate }}</p>
-                    <p><strong>Start Time:</strong> {{ locum.start_time.strftime('%Y-%m-%d %H:%M') }}</p>
-                    <p><strong>End Time:</strong> {{ locum.end_time.strftime('%Y-%m-%d %H:%M') }}</p>
+                    <p><strong><span class="bold-color">Requirements:</span></strong> {{ locum.requirements }}</p>
+                    <p><strong><span class="bold-color">Job Description:</span></strong> {{ locum.job_description }}</p>
+                    <p><strong><span class="bold-color"><i class="bi bi-geo-alt-fill"></i>Location:</span></strong> {{ locum.location }}</p>
+                    <p><strong><span class="bold-color"><i class="bi bi-currency-dollar"></i>Hourly Rate:</span></strong> KES {{ locum.hourly_rate }}</p>
+                    <p><strong><span class="bold-color">Start Time:</span></strong> {{ locum.start_time.strftime('%Y-%m-%d %H:%M') }}</p>
+                    <p><strong><span class="bold-color">End Time:</span></strong> {{ locum.end_time.strftime('%Y-%m-%d %H:%M') }}</p>
 
                     <p><strong>Status:</strong>
                         {% if locum.status == 'booked' %}
-                            <span class="status-booked">{{ locum.status }}</span>
+                            <span class="status-booked">{{ locum.status.capitalize() }}</span>
                         {% elif locum.status == 'settled' %}
                             <span class="status-settled">{{ locum.status }}</span>
                         {% else %}
@@ -28,8 +28,7 @@
                         {% endif %}
                     </p>
 
-                    <p><strong>Created By:</strong> {{ locum.poster.name }}</p>
-
+                    <p><strong><span class="bold-color">Created By:</span> {{ locum.poster.name }}</strong></p>
                     {% if locum.user_id == session['user_id'] and locum.status == 'booked' %}
                     <form action="{{ url_for('main.mark_settled', locum_id=locum.id) }}" method="POST">
                         <button type="submit" class="mark-settled-btn">Mark as Settled</button>
