@@ -29,8 +29,11 @@ body {
     text-decoration: none;
     background-color: #555;
     color: #ccc;
-    /* padding: 5px; */
+    
 }
+
+
+/* Right Sidebar Styles */
 
 .form-card {
     /* margin-bottom: 35px; */
@@ -38,10 +41,12 @@ body {
     background: #f9fbffaf;
     border: 1px solid #dce3f0;
     border-radius: 8px;
-    max-width: 600px;
+    max-width: 700px;
     width: 100%;
     padding: 2rem;
-    margin-left: 25%;
+    /* margin-left: 25%; */
+    justify-content: center;
+    display: inline-block;
 
     
    
@@ -147,14 +152,14 @@ footer {
 
 .locum-list-container {
     padding: 20px;
-    width: 300px;
+    width: 100%;
 }
 .locum-list-container p .bold-color{
     color: #cc0909;
 }
 .container .locum-list-container {
     padding: 20px;
-    width: 300px;
+    width: 100%;
     text-align: left;
 }
 
@@ -332,18 +337,21 @@ h2 {
         min-height: 100vh;
         display: block;
         padding: 20px;
+        width: 95%;
     }
 
     .form-card {
-        margin: 20px auto;
-        width: 90%;
+        margin: 20px 0;
+        width: 100%;
         padding: 1rem;
+        justify-content: center;
+        margin-left: 0;
     }
 
     .form-container {
         width: 90%;
         padding: 15px;
-        margin: 20px auto;
+        /* margin: 20px auto; */
     }
 
     .navbar {
@@ -358,11 +366,13 @@ h2 {
 
     .locum-list-container {
         width: 100%;
-        padding: 10px;
+        padding: 0px;
     }
 
     .locum-item {
         padding: 10px;
+        margin: 2px;
+        width: 100%;
     }
 
     .btn,
@@ -418,4 +428,7 @@ h2 {
       .btn1 {
         display: block;
       }
+    
 }
+
+/* Show toggle button on small screens (≤767px) */

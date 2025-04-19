@@ -2,13 +2,13 @@
 {% block title %}Available Locums{% endblock %}
 
 {% block content %}
-<div class="locum-list-container text-start">
+<div class="locum-list-container">
     <h2>Available Locums</h2>
     
     {% if locums %}
         <div class="locum-list">
             {% for locum in locums %}
-                <div class="locum-item text-start">
+                <div class="locum-item">
                     <h3>{{ locum.job_title }}</h3>
                     <p><strong><span class="bold-color">Requirements:</span></strong> {{ locum.requirements }}</p>
                     <p><strong><span class="bold-color">Job Description:</span></strong> {{ locum.job_description }}</p>
